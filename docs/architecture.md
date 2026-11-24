@@ -213,10 +213,10 @@ trials at ≥1.6 g/kg/day; it does not establish a lower older-adult optimum.
 Meal distribution, carbohydrate, fed/fasted exercise and antioxidant context remain
 qualified supplements, not compulsory software gates or universal anabolic switches.
 
-`scripts/track_deficit.py` estimates energy-balance arithmetic from wearable energy
+`scripts/track_deficit.py` estimates energy-balance arithmetic from estimated resting/active energy
 and estimated body composition. Its 1.18 g/lb estimated lean-mass protein multiplier
-(about 2.6 g/kg estimated lean mass), 70 g/day fat and selected 0.55 lb/week loss
-rate are personal choices. Research protein estimates generally use total body mass.
+(about 2.6 g/kg estimated lean mass), 70 g/day fat and selected 0.50 lb/week default loss
+rate are planning defaults. Research protein estimates generally use total body mass.
 The 3,500 kcal/lb conversion and fixed-lean-mass projection are approximations.
 The tracker does not diagnose low energy availability or change the chosen deficit
 automatically. Murphy & Koehler's roughly 500 kcal/day regression is not a universal

@@ -1,6 +1,7 @@
 # Hevy Program Generator (`hevy-program-generator`)
 
 [![CI: QA & Verification Gate](https://github.com/savvides/hevy-program-generator/actions/workflows/ci.yml/badge.svg)](https://github.com/savvides/hevy-program-generator/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/savvides/hevy-program-generator)](https://github.com/savvides/hevy-program-generator/releases)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![Zero Dependencies](https://img.shields.io/badge/dependencies-0%20external-brightgreen.svg)](https://docs.python.org/3/library/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
@@ -292,14 +293,33 @@ python3 scripts/build_routines.py --program programs/starter_full_body_2x.py
 
 ---
 
-## Evidence review
+## Evidence & Knowledge Base
 
-See [exercise evidence](docs/evidence_base.md) and [nutrition evidence](docs/nutrition_evidence_base.md)
-for supported claims, coaching choices, scope and remaining measurement gaps. The retained literature
-index is not a full appraisal of every paper. Cached metadata and unproven consensus percentages must not certify a prescription.
+The local knowledge base that informs program generation and citation verification lives in five files:
+
+- [Exercise evidence](docs/evidence_base.md) — synthesized resistance-training and cardio guidance with study populations and limits.
+- [Nutrition evidence](docs/nutrition_evidence_base.md) — protein, energy-deficit, and fueling guidance.
+- [November 2, 2026 Consensus review](docs/research/2026-11-02-consensus-review.md) — 100-paper corpus index with DOIs, populations, policy notes, and appraisal depth.
+- [Evidence authority manifest](data/evidence_authority.json) — machine-readable corpus allowlist and program-citation supplements.
+- [Consensus bibliographic cache](data/consensus_cache.json) — offline-first bibliographic metadata for 309 papers (`doi`, `citation_key`, `authors`, `title`, `year`, `journal`, `consensus_url`) used by Gate 6 without network requests or verbatim third-party text.
+
+Cached metadata and unappraised records do not certify a prescription.
 
 ---
 
-## License
+## Contributing
 
-Licensed under the [MIT License](LICENSE).
+Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines, evidence requirements, and local QA checks before opening a pull request.
+
+---
+
+## Disclaimer
+
+This software is provided for educational and training-planning purposes only. It is not medical advice, physical therapy, or clinical clearance, and automated QA checks do not establish individual physiological safety or optimal programming.
+
+---
+
+## License & Third-Party Notices
+
+- Repository source code and original documentation are licensed under the [MIT License](LICENSE) (`Copyright (c) 2026 Philippos Savvides`).
+- Built-in exercise catalog entries in [`data/exercise_templates.json`](data/exercise_templates.json) and bibliographic records in [`data/consensus_cache.json`](data/consensus_cache.json) support local validation; optional cloud integrations use the [Hevy API](https://api.hevyapp.com/docs/) and [Consensus Academic API](https://consensus.app) under their respective terms of service and do not redistribute verbatim third-party paper abstracts or takeaways.

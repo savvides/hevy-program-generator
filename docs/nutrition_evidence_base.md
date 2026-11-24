@@ -164,19 +164,15 @@ supplements or authorize other background cache records.
   performance aid; clinical indications need individual advice. Whole foods and
   concentrated supplements are different exposures.
 
-The former 99-paper nutrition bibliography remains in Git history as background.
-Its entries do not silently become current policy evidence. A future authority
-update may deliberately incorporate additional sources after claim-level review.
-
 ## This repository's tracker
 
-`scripts/track_deficit.py` is an arithmetic planning aid. Wearable energy estimates,
+`scripts/track_deficit.py` is an arithmetic planning aid. Estimated energy expenditure,
 consumer body-composition measurements, the 3,500 kcal/lb conversion and a
 constant-lean-mass projection are uncertain approximations. Its protein multiplier
 uses estimated lean mass, whereas the adult protein findings above use total body
 mass. The multiplier of 1.18 g/lb estimated lean mass (about 2.6 g/kg estimated lean
-mass), fat at 70 g/day and the selected 0.55 lb/week loss rate remain personal
-choices. This review does not change them.
+mass), fat at 70 g/day and the 0.50 lb/week default loss rate are illustrative coaching
+defaults, not population prescriptions.
 
 Deadline arithmetic remains separate from the chosen rate. The tracker does not change the chosen deficit automatically as a date approaches
 and does not prescribe calorie changes from short-term scale movement. Finite-input, body-fat-fraction
