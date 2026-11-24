@@ -72,7 +72,7 @@ Training programs are decoupled from the synchronization and evaluation engine.
 
 ### 3.1 Path Resolution Hierarchy
 
-[`scripts/program_loader.py`](scripts/program_loader.py) resolves the active program file using the following precedence:
+[`scripts/program_loader.py`](../scripts/program_loader.py) resolves the active program file using the following precedence:
 
 1. **CLI Flag:** `--program <path>` passed explicitly to any engine script.
 2. **Environment Variable:** `HEVY_PROGRAM=<path>`.
@@ -130,13 +130,13 @@ CARDIO_SCHEDULE: list[dict[str, Any]] = [
 
 ## 4. Reconcile Algorithm & Fuzzy Exercise Matcher
 
-The Hevy API synchronization client ([`scripts/build_routines.py`](scripts/build_routines.py)) implements an idempotent, state-reconciling architecture.
+The Hevy API synchronization client ([`scripts/build_routines.py`](../scripts/build_routines.py)) implements an idempotent, state-reconciling architecture.
 
 ### 4.1 Fuzzy Exercise Resolution
 
 Hevy stores thousands of exercise templates with varying naming conventions (e.g. `"Squat (Barbell)"` vs `"Barbell Full Squat"`). To provide offline resilience and robust name matching:
 
-1. **Catalog Cache:** All account-accessible templates are fetched and cached in [`data/exercise_templates.json`](data/exercise_templates.json) with a 30-day Time-To-Live (TTL).
+1. **Catalog Cache:** All account-accessible templates are fetched and cached in [`data/exercise_templates.json`](../data/exercise_templates.json) with a 30-day Time-To-Live (TTL).
 2. **String Normalization:** Both query names and catalog titles are normalized by lowercasing and stripping non-alphanumeric characters:
    $$\text{normalize}(s) = \text{re.sub}(r'[\text{\textasciicircum}a\text{-}z0\text{-}9]+', \text{' '}, s.\text{lower}()).\text{strip}()$$
 3. **Alias Map:** Common nomenclature differences (e.g., `"palloff press"` $\rightarrow$ `"Cable Core Pallof Press"`) are normalized via `EXERCISE_ALIASES`.
@@ -160,7 +160,7 @@ To prevent creating duplicate routines upon repeated script executions:
 
 ## 5. Configured Evaluator Mathematics
 
-### 5.1 Volume Accounting ([`eval_program_volume.py`](scripts/eval_program_volume.py))
+### 5.1 Volume Accounting ([`eval_program_volume.py`](../scripts/eval_program_volume.py))
 
 Weekly volume per muscle group $m$ is computed using direct and fractional synergist contributions:
 
@@ -231,7 +231,7 @@ preserve elicited selection constraints and do not provide clinical clearance.
 
 ## 6. Session Duration Simulation Model (Gym Physics)
 
-Gym session duration is deterministically modeled in [`scripts/estimate_session_time.py`](scripts/estimate_session_time.py) and calibrated against actual Hevy mobile app workout logs via [`scripts/calibrate_session_time.py`](scripts/calibrate_session_time.py).
+Gym session duration is deterministically modeled in [`scripts/estimate_session_time.py`](../scripts/estimate_session_time.py) and calibrated against actual Hevy mobile app workout logs via [`scripts/calibrate_session_time.py`](../scripts/calibrate_session_time.py).
 
 ### 6.1 Mathematical Formulation
 
@@ -291,9 +291,9 @@ To ensure complete athlete privacy and zero data leakage:
 
 1. **Storage Decoupling (`HEVY_DATA_DIR`):**
    - Personal workout logs default to local `data/workouts/` (gitignored), or can be mapped entirely outside the repository directory using `HEVY_DATA_DIR` (e.g. `export HEVY_DATA_DIR=~/.hevy/workouts` or `--data-dir`).
-   - [`fetch_workouts.py`](scripts/fetch_workouts.py), [`calibrate_session_time.py`](scripts/calibrate_session_time.py), and [`analyze_history.py`](scripts/analyze_history.py) consume this path dynamically.
+   - [`fetch_workouts.py`](../scripts/fetch_workouts.py), [`calibrate_session_time.py`](../scripts/calibrate_session_time.py), and [`analyze_history.py`](../scripts/analyze_history.py) consume this path dynamically.
 2. **Personal Program Isolation (`HEVY_PROGRAM`):**
    - Custom program definitions reside in gitignored `programs/program.py` or an external path specified via `export HEVY_PROGRAM=/path/to/my_program.py`.
 3. **Automated Pre-Commit Privacy Gatekeeper:**
-   - [`scripts/check_privacy_leaks.py`](scripts/check_privacy_leaks.py) scans staged files before every commit, aborting if workout logs (`data/workouts/*`), environment secrets (`.env*`), custom routines (`programs/program.py`), or raw API keys are detected.
+   - [`scripts/check_privacy_leaks.py`](../scripts/check_privacy_leaks.py) scans staged files before every commit, aborting if workout logs (`data/workouts/*`), environment secrets (`.env*`), custom routines (`programs/program.py`), or raw API keys are detected.
    - Installed into `.git/hooks/pre-commit` via `python3 scripts/install_hooks.py`.

@@ -41,8 +41,20 @@ class TestConsensusCache(unittest.TestCase):
             self.assertIsInstance(paper["citation_key"], str)
             self.assertTrue(paper["citation_key"].strip())
 
-            self.assertNotIn("abstract", paper, f"Paper {paper_id} must not contain verbatim abstract")
-            self.assertNotIn("takeaway", paper, f"Paper {paper_id} must not contain verbatim takeaway")
+            for key in paper:
+                self.assertNotIn(
+                    key.lower(),
+                    {"abstract", "takeaway"},
+                    f"Paper {paper_id} must not contain verbatim {key}",
+                )
+            raw_export = paper.get("raw_export")
+            if isinstance(raw_export, dict):
+                for key in raw_export:
+                    self.assertNotIn(
+                        key.lower(),
+                        {"abstract", "takeaway"},
+                        f"Paper {paper_id} raw_export must not contain verbatim {key}",
+                    )
 
     def test_queries_are_empty_in_public_seed(self):
         self.assertTrue(CACHE_FILE.exists(), f"Cache file {CACHE_FILE} missing")

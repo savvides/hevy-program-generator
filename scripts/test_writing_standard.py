@@ -6,15 +6,14 @@ import contextlib
 import copy
 import io
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
-import tempfile
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import build_routines as br  # noqa: E402
 import check_writing_standard as cws  # noqa: E402
 import render_program  # noqa: E402
-from program_loader import load_program  # noqa: E402
 
 SAMPLE_STE_PROGRAM = {
     "PROGRAM_METADATA": {

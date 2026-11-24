@@ -1,5 +1,5 @@
 {
-  "abstract": "Training at long muscle lengths produced greater hamstring hypertrophy.",
+  "abstract": "Synthetic fixture abstract text for normalizer unit tests.",
   "authors": ["Sumiaki Maeo", "Meng Huang", "Yuhang Wu"],
   "citation_count": 212,
   "countries_of_study": ["United Kingdom"],
@@ -17,7 +17,7 @@
   "sjr_best_quartile": 1,
   "study_duration_days": 84,
   "study_type": "rct",
-  "takeaway": "Seated leg curl training promotes greater hamstring hypertrophy than lying.",
+  "takeaway": "Synthetic fixture takeaway text for normalizer unit tests.",
   "title": "Greater Hamstrings Muscle Hypertrophy but Similar Damage Protection after Training at Long versus Short Muscle Lengths",
   "url": "https://consensus.app/papers/example",
   "volume": "53"
