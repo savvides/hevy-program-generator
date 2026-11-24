@@ -25,37 +25,61 @@ Define training routines in Python, validate them against deterministic structur
 
 ---
 
-## 3-Step Quickstart
+## How to Use This Repo
 
-### 1. Clone the Repository
+### 1. Setup (Once)
 
 ```bash
 git clone https://github.com/savvides/hevy-program-generator.git
 cd hevy-program-generator
 ```
 
-*(Optional: Copy `.env.example` to `.env` and configure `HEVY_API_KEY` for cloud sync and `CONSENSUS_API_KEY` for live literature queries.)*
-
-### 2. Run Pre-Flight QA Verification
-
-Validate the included starter programs against all configured checks:
+- *(Optional — for Hevy sync, workout history, or live literature queries)* Copy `.env.example` to `.env` and add `HEVY_API_KEY` and/or `CONSENSUS_API_KEY`. Offline QA, program synthesis, and cached citation checks work with no API keys.
+- *(Optional — recommended before committing)* Install the pre-commit privacy hook to block accidental commits of workout logs, custom programs, or secrets:
 
 ```bash
-# Full-Body 2x (Strength + Polarized VO2 Max Cycling)
-python3 scripts/qa_program.py --program programs/starter_full_body_2x.py
-
-# Upper / Lower 4x (Hypertrophy + Aerobic Base)
-python3 scripts/qa_program.py --program programs/upper_lower_4x.py
+python3 scripts/install_hooks.py
 ```
 
-### 3. Dry-Run or Push to Hevy
+### 2. Option A: Use Natural Language (AI Assistant)
+
+Open this repository in Claude Code, Antigravity, Gemini CLI, Cursor, GitHub Copilot, or Windsurf. The repo's instruction files ([`AGENTS.md`](AGENTS.md), [`CLAUDE.md`](CLAUDE.md), [`GEMINI.md`](GEMINI.md), and [`.cursorrules`](.cursorrules)) guide the assistant to ask clarifying intake questions when needed, write or edit Python program definitions, run `scripts/qa_program.py`, and handle dry-run or sync when asked.
+
+Copy and adapt any of these prompts:
+
+1. **Build a new program from scratch**
+   > *"Design a 3-day full-body program on Mon/Wed/Fri under a 55-minute time cap using a barbell, adjustable bench, dumbbells, and a stationary bike. Account for mild lower-back sensitivity, label coaching choices separately from research findings, and run all QA gates until green."*
+
+2. **Modify an existing program**
+   > *"In `programs/starter_full_body_2x.py`, swap Box Squat for a joint-friendly unilateral leg exercise, keep total session time under 55 minutes without cutting rest targets, add a 40-minute Zone 2 bike session on Sunday, and re-run `qa_program.py`."*
+
+3. **Sync to Hevy & render the HTML plan**
+   > *"Run `qa_program.py` and `build_routines.py --dry-run` on `programs/my_program.py`. Show me the planned changes, push to Hevy after I confirm, and regenerate `docs/program.html`."*
+
+4. **Pull & analyze Hevy workout history**
+   > *"Fetch my latest Hevy workouts with `fetch_workouts.py`, summarize recent lift frequency and top sets with `analyze_history.py`, and compare logged session durations against our estimate using `calibrate_session_time.py`."*
+
+5. **Ask evidence or nutrition questions**
+   > *"Using `docs/evidence_base.md`, `docs/nutrition_evidence_base.md`, and `data/consensus_cache.json`, what does the reviewed literature say about rest intervals for hypertrophy and protein intake around morning training? Separate study findings and population limits from coaching choices."*
+
+### 3. Option B: Use the CLI Directly
 
 ```bash
-# Preview API reconciliation plan and payload structure without making network writes (may read the API)
-python3 scripts/build_routines.py --program programs/starter_full_body_2x.py --dry-run
+# 1. Validate a program against all 9 QA gates (starter_full_body_2x.py, upper_lower_4x.py, three_day_split_3x.py)
+python3 scripts/qa_program.py --program programs/starter_full_body_2x.py
 
-# Sync routines directly into your Hevy account
+# 2. Synthesize a new program from movement patterns with automatic QA pre-flight
+python3 scripts/suggest_program.py --days 3 --time-cap 60 --focus "Strength" --output programs/my_program.py
+
+# 3. Render the readable HTML plan (docs/program.html)
+python3 scripts/render_program.py
+
+# 4. Preview Hevy sync without writing, then push routines to Hevy
+python3 scripts/build_routines.py --program programs/starter_full_body_2x.py --dry-run
 python3 scripts/build_routines.py --program programs/starter_full_body_2x.py
+
+# 5. Pull workout history and print a deterministic lift/frequency summary
+python3 scripts/fetch_workouts.py && python3 scripts/analyze_history.py
 ```
 
 ---
@@ -250,9 +274,6 @@ Joint-profile labels preserve selection constraints and do not provide clinical 
 │    Loop back to Step 3    │    │    .py --program <path>    │
 └───────────────────────────┘    └────────────────────────────┘
 ```
-
-Ask your AI assistant:
-> *"Design a 3-day full-body program under a 50-minute time cap with a barbell and dumbbells, distinguishing reviewed findings from exact coaching choices and ensuring QA gates pass."*
 
 ---
 
