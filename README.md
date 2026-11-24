@@ -45,22 +45,22 @@ python3 scripts/install_hooks.py
 
 Open this repository in Claude Code, Antigravity, Gemini CLI, Cursor, GitHub Copilot, or Windsurf. The repo's instruction files ([`AGENTS.md`](AGENTS.md), [`CLAUDE.md`](CLAUDE.md), [`GEMINI.md`](GEMINI.md), and [`.cursorrules`](.cursorrules)) guide the assistant to ask clarifying intake questions when needed, write or edit Python program definitions, run `scripts/qa_program.py`, and handle dry-run or sync when asked.
 
-Copy and adapt any of these prompts:
+Copy and adapt any of these prompts — you don't need to mention file names or commands, because the assistant maps plain English to the right scripts and docs automatically:
 
 1. **Build a new program from scratch**
-   > *"Design a 3-day full-body program on Mon/Wed/Fri under a 55-minute time cap using a barbell, adjustable bench, dumbbells, and a stationary bike. Account for mild lower-back sensitivity, label coaching choices separately from research findings, and run all QA gates until green."*
+   > *"Design a 3-day full-body program on Mon/Wed/Fri under a 55-minute time cap using a barbell, adjustable bench, dumbbells, and a stationary bike. Account for mild lower-back sensitivity, separate research findings from coaching choices, and make sure all checks pass."*
 
 2. **Modify an existing program**
-   > *"In `programs/starter_full_body_2x.py`, swap Box Squat for a joint-friendly unilateral leg exercise, keep total session time under 55 minutes without cutting rest targets, add a 40-minute Zone 2 bike session on Sunday, and re-run `qa_program.py`."*
+   > *"In my 2-day starter program, swap Box Squat for a joint-friendly single-leg exercise, keep sessions under 55 minutes without cutting rest times, add a 40-minute Zone 2 bike ride on Sunday, and re-check the program."*
 
-3. **Sync to Hevy & render the HTML plan**
-   > *"Run `qa_program.py` and `build_routines.py --dry-run` on `programs/my_program.py`. Show me the planned changes, push to Hevy after I confirm, and regenerate `docs/program.html`."*
+3. **Sync to Hevy & update the printable plan**
+   > *"Validate my program, preview what will change in Hevy first, and once I confirm, sync it to Hevy and update the readable workout plan."*
 
 4. **Pull & analyze Hevy workout history**
-   > *"Fetch my latest Hevy workouts with `fetch_workouts.py`, summarize recent lift frequency and top sets with `analyze_history.py`, and compare logged session durations against our estimate using `calibrate_session_time.py`."*
+   > *"Pull my latest Hevy workouts, summarize my recent consistency and top sets, and compare my actual gym times against the program's time estimates."*
 
 5. **Ask evidence or nutrition questions**
-   > *"Using `docs/evidence_base.md`, `docs/nutrition_evidence_base.md`, and `data/consensus_cache.json`, what does the reviewed literature say about rest intervals for hypertrophy and protein intake around morning training? Separate study findings and population limits from coaching choices."*
+   > *"Using this repo's evidence base, what does the research say about rest intervals for hypertrophy and protein intake around morning workouts? Separate study findings and limits from coaching choices."*
 
 ### 3. Option B: Use the CLI Directly
 
