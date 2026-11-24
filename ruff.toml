@@ -1,0 +1,15 @@
+# Lint configuration. Dev tooling only — the project itself stays dependency-free
+# and every script still runs on a bare `python3` with no virtualenv.
+# Deliberately narrow: F (pyflakes) and E9 (syntax) are near-zero-noise, and B
+# (bugbear) catches real bug classes such as zip() silently truncating. Style
+# rules are excluded on purpose — a rule set that gets suppressed teaches the
+# codebase that guards are negotiable.
+line-length = 100
+# py39, not py310: CI's matrix floor is 3.10 but the machine these scripts are
+# actually run on has python3 == 3.9.6, so 3.9 is the real support floor. This
+# stops ruff proposing zip(strict=) and other 3.10-only fixes that would pass CI
+# and break the dev machine.
+target-version = "py39"
+
+[lint]
+select = ["F", "E9", "B"]

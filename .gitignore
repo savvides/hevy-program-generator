@@ -1,0 +1,19 @@
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+
+# User Custom Program (gitignored for privacy)
+programs/program.py
+
+# Personal Workout Logs
+data/workouts/*
+!data/workouts/.gitkeep
+
+# Python artifacts & OS files
+__pycache__/
+*.pyc
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+.worktrees/

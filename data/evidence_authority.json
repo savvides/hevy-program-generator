@@ -1,0 +1,670 @@
+{
+  "review_id": "2026-11-02-consensus-review",
+  "review_date": "2026-11-02",
+  "queries": [
+    "strength hypertrophy training volume dose response",
+    "resistance training frequency muscle hypertrophy strength",
+    "resistance training proximity to failure rir rpe",
+    "concurrent strength and endurance training interference",
+    "resistance training adaptations age older adults sex differences",
+    "daily protein intake resistance training muscle mass healthy adults",
+    "creatine supplementation resistance training muscle strength safety",
+    "energy deficit resistance training lean mass retention",
+    "exercise intensity bone mineral density postmenopausal women",
+    "hiit vs continuous endurance training vo2max adaptations"
+  ],
+  "primary": [
+    {
+      "doi": "10.1249/mss.0000000000003897",
+      "topic": "Adult resistance-training prescription; overview of 137 reviews, healthy adults ≥18, interventions ≥6 weeks.",
+      "policy_use": "Primary adult prescription synthesis; goal-specific guidance, no exact warmup or universal QA-dose mandate.",
+      "verification_depth": "A; original abstract and official ACSM summaries; journal full text not retrieved."
+    },
+    {
+      "doi": "10.1136/bjsports-2023-106807",
+      "topic": "Load/sets/frequency network meta-analysis; healthy adults, 178 strength studies and 119 hypertrophy studies; 45–47% women.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1016/j.jshs.2023.06.005",
+      "topic": "Training-variable umbrella review; healthy adults according to title; export abstract blank, detailed ages/sample unknown here.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1136/bjsports-2017-097608",
+      "topic": "Protein with resistance training; 49 RCTs, 1,863 healthy adults, mean age 35 ±20; energy-restricted samples excluded.",
+      "policy_use": "Adult protein planning context; uncertain breakpoint, energy-restricted samples excluded; no age/sex formula.",
+      "verification_depth": "S; selected original full-text sections."
+    },
+    {
+      "doi": "10.7717/peerj.19042",
+      "topic": "Sex and absolute/relative hypertrophy; 29 matched-training studies, healthy male/female adults 18–45.",
+      "policy_use": "Keep relative versus absolute adaptation distinct; no sex-dependent set/load rule.",
+      "verification_depth": "A; original abstract/first-page PDF, no complete methods review."
+    },
+    {
+      "doi": "10.1007/s40279-020-01388-4",
+      "topic": "Sex and strength/size adaptation; 30 studies, 1,410 adults >50; matched male/female training.",
+      "policy_use": "Older-adult sex context; no automatic programming multiplier.",
+      "verification_depth": "A; original abstract."
+    },
+    {
+      "doi": "10.1152/japplphysiol.00170.2020",
+      "topic": "Fiber hypertrophy; 35 studies, eligibility ≥55; reported sample-age summaries 59.0–88.5 (means when available, participant ranges otherwise); male/female participants.",
+      "policy_use": "Older fiber adaptations; study-level associations do not mandate lighter loads by age.",
+      "verification_depth": "S; original abstract plus methods/Table1/Table2 age-definition sections."
+    },
+    {
+      "doi": "10.1093/gerona/58.2.b108",
+      "topic": "Fiber/strength sex comparison; nine men about 69 and five women about 66; 26-week knee-extensor training.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1152/japplphysiol.00289.2026",
+      "topic": "Response heterogeneity; conference synthesis, not a new intervention cohort; diverse resistance-training research.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1249/mss.0000000000002585",
+      "topic": "Load and failure; 28 studies, 747 healthy adults; all included sets reached volitional failure.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1080/02640414.2021.1898094",
+      "topic": "Load and hypertrophy/strength; 45 studies including younger/older groups; precise age definitions not established here.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1080/02640414.2016.1210197",
+      "topic": "Weekly volume/hypertrophy; 15 studies/34 treatment groups; age/sex details not supplied in exported abstract.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1007/s40279-025-02344-w",
+      "topic": "Volume/frequency dose-response; 67 studies, 2,058 participants, mean age 25.16; 79.1% male.",
+      "policy_use": "Volume/frequency and fractional-set context; preserve 0.5 bookkeeping as a heuristic, not a validated catalog.",
+      "verification_depth": "A; original abstract."
+    },
+    {
+      "doi": "10.1007/s40279-018-0872-x",
+      "topic": "Frequency/strength; 22 studies, mostly untrained; young and middle-aged/older, male/female subgroups.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1007/s40279-024-02069-2",
+      "topic": "Estimated proximity to failure; exploratory meta-regressions of strength/hypertrophy trials; exact demographic range not established by checked abstract.",
+      "policy_use": "Qualify proximity-to-failure guidance; estimated RIR cannot establish exact RPE.",
+      "verification_depth": "A; original abstract."
+    },
+    {
+      "doi": "10.1007/s40279-022-01784-y",
+      "topic": "Proximity to failure/hypertrophy; 15 studies, healthy adults of any age/training experience were eligible.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1186/s40798-023-00578-4",
+      "topic": "Lower-load resistance exercise; narrative review across health/performance contexts, including reduced mobility; no single trial population.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1080/02640414.2016.1209306",
+      "topic": "Maturation and strength; 19 studies of healthy boy athletes 10–18, training 4–16 weeks.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1007/s40279-026-02499-0",
+      "topic": "Youth hypertrophy; 23 controlled studies, 1,443 participants <18, across maturity stages and both sexes.",
+      "policy_use": "Youth scope/context; no adult dose extrapolation or maturity/sex multiplier.",
+      "verification_depth": "S; selected original full-text sections."
+    },
+    {
+      "doi": "10.1007/s40279-020-01331-7",
+      "topic": "Very old adults; 22 RCTs in adults ≥75, with ≥80 subgroup; strength and muscle-size endpoints.",
+      "policy_use": "Very-old-adult applicability; no age prohibition or clinical-safety guarantee.",
+      "verification_depth": "A; original abstract."
+    },
+    {
+      "doi": "10.1016/j.smhs.2025.01.005",
+      "topic": "Women's resistance training, history/mechanisms; title-defined scope only; export abstract blank.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1249/mss.0000000000004031",
+      "topic": "Menstrual-phase scheduling; 24 healthy eumenorrheic women, untrained/recreationally active, unilateral quadriceps training across three cycles.",
+      "policy_use": "Cycle conflict: no demonstrated phase-scheduling advantage in this sample; no universal equivalence claim.",
+      "verification_depth": "S; original abstract plus indexed methods/limitations."
+    },
+    {
+      "doi": "10.3389/fspor.2023.1054542",
+      "topic": "Menstrual-cycle evidence umbrella review; female performance/adaptation literature with inconsistent phase verification.",
+      "policy_use": "Cycle conflict: poor phase verification/inconsistent findings; no automatic phase scheduler.",
+      "verification_depth": "S; selected original full-text sections."
+    },
+    {
+      "doi": "10.1152/japplphysiol.00346.2023",
+      "topic": "Cycle hormones/oral contraception; physiology review of female participants; precise ages and study composition not established here.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1186/s12905-023-02671-y",
+      "topic": "Menopause and training; healthy women 40–60, 41 enrolled/31 completed; 10 control weeks then 10 training weeks.",
+      "policy_use": "Menopause context; proposed higher volume was not tested, no automatic set minimum.",
+      "verification_depth": "S; selected original full-text sections."
+    },
+    {
+      "doi": "10.1002/jcsm.12922",
+      "topic": "Protein/muscle function; 74 RCTs in healthy non-obese adults; <65 and ≥65 subgroups, disease and weight-loss diets excluded.",
+      "policy_use": "Protein planning limits; older ≥1.6 g/kg/day trial gap does not establish a lower older-adult optimum.",
+      "verification_depth": "S; selected original full-text sections."
+    },
+    {
+      "doi": "10.1093/ajcn/nqab355",
+      "topic": "Protein plus training; 28 studies with mean age ≥50, including sarcopenic/frail samples.",
+      "policy_use": "Older protein/training context; frailty/sarcopenia subgroups and heterogeneity limit generalization.",
+      "verification_depth": "A; original abstract."
+    },
+    {
+      "doi": "10.1093/nutrit/nuaa011",
+      "topic": "Nutrition/sarcopenia umbrella review; adults ≥65, 15 earlier systematic reviews; mixed supplements and exercise contexts.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1007/s11357-025-01877-2",
+      "topic": "Leucine versus alanine during training/diet; 19 pre/frail women, mean age 77.5, 12 weeks.",
+      "policy_use": "No added leucine benefit in this small comparison; no no-training arm, no universal leucine dose.",
+      "verification_depth": "S; selected original full-text sections."
+    },
+    {
+      "doi": "10.1093/jn/nxy169",
+      "topic": "Post-exercise/pre-sleep protein; 41 active older men, mean about 70, 12-week resistance training.",
+      "policy_use": "No compulsory post-workout/pre-sleep protein bolus; not proof timing never matters.",
+      "verification_depth": "A; original abstract."
+    },
+    {
+      "doi": "10.3390/nu16213665",
+      "topic": "Creatine and strength; 23 studies in healthy adults <50, predominantly men, small female subgroup.",
+      "policy_use": "Optional adult creatine benefit; small nonsignificant female subgroup does not prove ineffectiveness.",
+      "verification_depth": "S; selected original full-text sections."
+    },
+    {
+      "doi": "10.3389/fnut.2026.1919884",
+      "topic": "Creatine with training; 11 RCTs in adults ≥60, mostly generally healthy with some vulnerable postmenopausal groups.",
+      "policy_use": "Older creatine: small strength benefit, uncertain mass/function; no demographic dose formula.",
+      "verification_depth": "S; selected original full-text sections."
+    },
+    {
+      "doi": "10.1186/s11556-025-00384-9",
+      "topic": "Creatine/exercise meta-analysis; 20 articles, 1,093 older adults, 69% female; exact age boundary not established here.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1519/jsc.0000000000004862",
+      "topic": "Creatine/body composition; 12 studies in adults <50 undertaking resistance training.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1111/sms.14075",
+      "topic": "Energy deficit/training; interventions ≥3 weeks, largely untrained; some cross-study matched comparisons.",
+      "policy_use": "Energy-deficit tradeoff; about 500 kcal/day regression estimate is not a safety threshold.",
+      "verification_depth": "S; selected original full-text sections."
+    },
+    {
+      "doi": "10.1007/s40279-024-02130-0",
+      "topic": "LEA/REDs athlete review; 59 studies, 6,118 athletes in 46 prevalence studies; varied definitions and sports.",
+      "policy_use": "Energy-availability context; tracker does not diagnose LEA/REDs or assign sex-risk multipliers.",
+      "verification_depth": "A; original abstract."
+    },
+    {
+      "doi": "10.1161/cir.0000000000001189",
+      "topic": "AHA cardiovascular statement; adults with/without cardiovascular disease; healthy and clinical populations.",
+      "policy_use": "Cardiovascular context; no individual clinical clearance.",
+      "verification_depth": "A; original indexed abstract/content; direct publisher PDF denied."
+    },
+    {
+      "doi": "10.1136/bjsports-2025-110503",
+      "topic": "Mortality/physical activity; prospective HPFS/NHS/NHS-II cohorts, 147,374 participants; scope from export, not original-content review.",
+      "policy_use": "Indexed only; exported observational associations cannot establish causal longevity or a training-time cap.",
+      "verification_depth": "U; metadata verified; primary content inaccessible; population from exported abstract."
+    },
+    {
+      "doi": "10.3390/jfmk11010080",
+      "topic": "Advanced training systems; 23 studies in recreationally trained adults 18–45.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1007/s40279-024-02006-3",
+      "topic": "Training dose-response across performance outcomes; healthy trained/untrained adults; control group not required.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1080/15502783.2023.2236053",
+      "topic": "Protein and concurrent/resistance training; 48 trained men, age 26 ±6, 16 weeks, 1.6 versus 3.2 g/kg/day.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1007/s40279-021-01605-8",
+      "topic": "Minimal-dose resistance training narrative review; lifespan/health context; no single experimental population.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1152/ajpendo.00574.2020",
+      "topic": "Protein and strength/gut microbiota; 50 healthy middle-aged adults, age 50 ±8; 10-week RCT.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1210/clinem/dgad414",
+      "topic": "Gender-affirming hormone therapy/performance; narrative review, mainly nonathletic transgender people, small uncontrolled/cross-sectional studies.",
+      "policy_use": "Therapy/endpoint-specific context; gender identity alone cannot supply physiology or dose rules.",
+      "verification_depth": "A; original abstract."
+    },
+    {
+      "doi": "10.1016/j.cdnut.2024.103706",
+      "topic": "Transgender/gender-diverse strength athletes; case-series title only; exported abstract blank and original content inaccessible.",
+      "policy_use": "No substantive claim use. Keep exact DOI; do not substitute related 10.1177/15248399241286027.",
+      "verification_depth": "U; metadata verified; blank export abstract; original content inaccessible."
+    },
+    {
+      "doi": "10.3390/nu16070941",
+      "topic": "Protein supplements with training; 78 RCTs/5,272 participants, middle-aged/older untrained community/clinical/institutional settings.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.3389/fnut.2019.00131",
+      "topic": "Energy surplus/hypertrophy; narrative review, diverse training/nutrition studies; no established single surplus-dose population.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1016/j.jshs.2021.01.007",
+      "topic": "Failure versus non-failure; strength/hypertrophy review in young adults; volume control and training status vary.",
+      "policy_use": "Non-failure guidance; exact RPE and accessory prescriptions remain coaching.",
+      "verification_depth": "A; original abstract."
+    },
+    {
+      "doi": "10.3389/fnut.2025.1682746",
+      "topic": "Creatine safety narrative review; human healthy/clinical literature; pregnancy and kidney-condition gaps.",
+      "policy_use": "Creatine safety qualification: possible GI distress; healthy-adult evidence is not pregnancy/kidney clearance.",
+      "verification_depth": "S; selected original full-text sections."
+    },
+    {
+      "doi": "10.1080/15502783.2024.2441760",
+      "topic": "Creatine questions narrative review; multiple sport, lifespan and clinical contexts; no single trial population.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.3389/fnut.2025.1640858",
+      "topic": "Nutrition plus training network meta-analysis; 19 RCTs in healthy older adults; exact age boundary not established here.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1249/mss.0b013e3181915670",
+      "topic": "ACSM progression position stand; healthy adult novice through advanced trainees; published 2009, export says 2011.",
+      "policy_use": "Historical adult stand, superseded for current adult synthesis by row 1; correct 2009 identity.",
+      "verification_depth": "M; original PubMed metadata supports 2009, not exported 2011."
+    },
+    {
+      "doi": "10.1080/15502783.2025.2488937",
+      "topic": "Creatine adverse-event analysis; 685 human trials plus reporting databases; heterogeneous populations and incomplete event details.",
+      "policy_use": "Safety context with reporting limits; do not count row 60 as independent replication.",
+      "verification_depth": "S; selected original full-text sections."
+    },
+    {
+      "doi": "10.1186/s12970-021-00412-w",
+      "topic": "Creatine questions narrative review; exercising, older and patient populations, with discussion of youth/female evidence.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.3390/sports9020032",
+      "topic": "Repetition-continuum narrative reappraisal; broad resistance-training studies, no single age/sex cohort.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1249/mss.0000000000001764",
+      "topic": "Training volume RCT; 34 healthy resistance-trained men, eight weeks, three sessions/week.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1152/japplphysiol.00892.2024",
+      "topic": "Muscle-specific aging/hypertrophy review; ≥60, 1,417 participants/68 studies, mostly 60–79 and quadriceps measurements.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1007/s12603-009-0124-8",
+      "topic": "Creatine/protein RCT; 42 men aged 48–72, 14-week resistance training.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1016/j.jnha.2024.100184",
+      "topic": "Whey/sarcopenia with or without training; older adults per title; export abstract blank, detailed sample unknown here.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.3390/sports14040137",
+      "topic": "Creatine dose/duration safety analysis; 684 trials, substantially the same database as row 53.",
+      "policy_use": "Safety context; substantial database overlap with row 53, no proof of absence of rare harms.",
+      "verification_depth": "S; abstract and publisher-indexed database/methods sections."
+    },
+    {
+      "doi": "10.1007/s40279-025-02240-3",
+      "topic": "Youth resistance-training Current Opinion article; advocacy across youth fitness/health, not a new controlled trial.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.2478/hukin-2022-0017",
+      "topic": "Volume/hypertrophy review; seven studies, trained young men 18–35; six quantitative studies.",
+      "policy_use": "Volume context confined to trained young men; no age-40 ceiling or individual MRV.",
+      "verification_depth": "A; original abstract."
+    },
+    {
+      "doi": "10.3390/nu15061466",
+      "topic": "Creatine/kidney narrative review; healthy/clinical humans and other evidence; pre-existing kidney disease remains a gap.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.3390/nu13020664",
+      "topic": "Youth creatine narrative review; pediatric clinical populations and adolescent athletic studies with narrower safety evidence than adults.",
+      "policy_use": "Youth supplement evidence gap is time-bounded to review date; no automatic adult protocol for minors.",
+      "verification_depth": "S; selected original full-text sections."
+    },
+    {
+      "doi": "10.1080/02640414.2020.1822595",
+      "topic": "Frequency meta-regression; 14 articles in adults >60, strength and hypertrophy outcomes.",
+      "policy_use": "No twice-weekly ceiling for older adults; meta-regression is not individual dose proof.",
+      "verification_depth": "A; original abstract."
+    },
+    {
+      "doi": "10.2147/ijwh.s462591",
+      "topic": "Pregnancy resistance-training brief overview; prenatal maternal/fetal outcomes, quasi-systematic search, no single trial population.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1007/s40279-023-01943-9",
+      "topic": "Concurrent training; 59 studies/1,346 healthy adults 18–50; no female hypertrophy or highly strength-trained samples.",
+      "policy_use": "Qualify concurrent-training claims; no female immunity or sex-dependent recovery hours.",
+      "verification_depth": "S; selected original full-text sections."
+    },
+    {
+      "doi": "10.1186/s12970-020-00397-y",
+      "topic": "Peanut protein/training; 39 older untrained adults, 17 female/22 male, mean 58.6; six- or ten-week programs.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1152/japplphysiol.00154.2016",
+      "topic": "Load/hormone RCT; 49 resistance-trained men, age 23 ±1, 12 weeks, all sets to failure.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1177/1941738117737248",
+      "topic": "Creatine sports clinical review; literature through January 2017, sport supplementation contexts; historical safety scope.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.3389/fspor.2022.949021",
+      "topic": "Hypertrophy umbrella review; 14 meta-analyses/178 primary studies/4,784 participants; age/sex composition not established here.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1016/j.jnha.2026.100808",
+      "topic": "Amino-acid transporters/aging; secondary analysis of two RCTs per title; export abstract blank, exact population unknown here.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.3390/nu14051035",
+      "topic": "Creatine forms/regulation critical review; bioavailability and safety across supplement literature; no single clinical cohort.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1080/17461391.2014.989922",
+      "topic": "Low/high-load meta-analysis; largely untrained individuals, 251 strength and 191 hypertrophy participants; precise ages not established here.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1002/med.21590",
+      "topic": "Creatine in pathological/paraphysiological conditions; narrative review of varied clinical, aging, vegetarian/vegan and brain-energy contexts.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.3390/jcm10081630",
+      "topic": "Frailty/sarcopenia training; 25 RCTs/2,267 adults ≥65 with pre-sarcopenia/sarcopenia/pre-frailty/frailty.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1136/bmj-2022-070849",
+      "topic": "PRIOR reporting guideline development; international methodologists/stakeholders, not an exercise-dose trial or lifter sample.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1136/bjsports-2024-109123",
+      "topic": "Prenatal resistance-training interventions; 50 studies/47,619 pregnant participants; 90% multicomponent programs.",
+      "policy_use": "Prenatal scope; multicomponent interventions do not clear every heavy adult routine.",
+      "verification_depth": "A; original abstract."
+    },
+    {
+      "doi": "10.1542/peds.2020-1011",
+      "topic": "AAP youth clinical report; children/adolescents, athletes/nonathletes; reaffirmed November 2024.",
+      "policy_use": "Youth supervision/technique/competency context; adult generator boundary is software scope.",
+      "verification_depth": "S; indexed publisher recommendations/status, not a full reappraisal."
+    },
+    {
+      "doi": "10.1007/s12603-018-1139-9",
+      "topic": "ICFSR sarcopenia clinical guideline; older-adult diagnosis/management literature and expert consensus, not a single training trial.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.3390/nu16121886",
+      "topic": "Carbohydrate/protein/amino-acid narrative review; strength/power athletes; exact age/sex scope not established here.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1186/1550-2783-10-26",
+      "topic": "Creatine/kidney RCT; healthy resistance-trained adults eating ≥1.2 g/kg/day protein, 12 weeks.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1002/jbmr.3284",
+      "topic": "LIFTMOR bone/functional RCT; 101 screened postmenopausal women with low bone mass, mean age about 65; supervised eight-month protocol.",
+      "policy_use": "Supervised bone-health context; one minor back spasm, no unsupervised osteoporosis clearance.",
+      "verification_depth": "S; original abstract and indexed discussion."
+    },
+    {
+      "doi": "10.3390/nu11040745",
+      "topic": "Dietary patterns/sarcopenia; overview of four reviews plus observational update, mainly older adults, Mediterranean update ≥60.",
+      "policy_use": "Dietary associations only; overview/update structure and confounding prevent treatment claims.",
+      "verification_depth": "S; selected original full-text sections."
+    },
+    {
+      "doi": "10.3389/fnut.2024.1439037",
+      "topic": "Lean-mass/performance associations; 48 trained men, age 26 ±6, 16 weeks, high-protein concurrent/resistance training.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1007/s40279-018-0914-4",
+      "topic": "Female youth strength meta-analysis; healthy females with mean ages 8–18, controlled 4–16-week programs.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.3390/nu18142307",
+      "topic": "Intra-workout protein/carbohydrate RCT; 17 active young men, eight-week fed-state training; small exploratory sample.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1007/s12603-019-1196-8",
+      "topic": "Exercise/sarcopenia umbrella review; 14 reviews in older adults; baseline sarcopenia often unspecified.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1186/s11556-025-00399-2",
+      "topic": "Sarcopenia training meta-analysis; 25 RCTs/1,302 older adults with sarcopenia; exact age cutoff varies/not used as a rule.",
+      "policy_use": "Sarcopenia context; cumulative-minute regression is exploratory, not a required training dose.",
+      "verification_depth": "S; selected original full-text sections."
+    },
+    {
+      "doi": "10.1007/s10926-025-10273-8",
+      "topic": "Office-worker training meta-analysis; adults ≥18; 17 studies narrative/16 quantitative, heterogeneous uncertain evidence.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1136/bjsports-2024-108619",
+      "topic": "Postpartum exercise review; 65 studies/21,334 participants during first postpartum year; pelvic-floor/abdominal interventions.",
+      "policy_use": "Postpartum pelvic-floor/abdominal context; no universal heavy-lifting return timetable.",
+      "verification_depth": "S; original abstract plus indexed methods/results."
+    },
+    {
+      "doi": "10.3390/nu17172792",
+      "topic": "Adolescent athlete nutrition narrative review; growth/development/training context, no single trial population.",
+      "policy_use": "Youth nutrition scope; growth/training needs, no automatic adult calorie restriction.",
+      "verification_depth": "A; original abstract."
+    },
+    {
+      "doi": "10.3390/nu17223528",
+      "topic": "Athlete protein narrative review; varied modalities, sources and clinical contexts including diabetes; no single trial population.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1016/j.bone.2020.115697",
+      "topic": "Exercise intensity and bone meta-analysis; postmenopausal women per title; export abstract blank, detailed sample unknown here.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.3390/nu15051104",
+      "topic": "Mediterranean diet/sarcopenia; apparently healthy older adults (>65 in title), 10 observational studies/17,663 participants, no trials.",
+      "policy_use": "Dietary associations only; no trials, mixed strength results, no causal sarcopenia-prevention claim.",
+      "verification_depth": "S; original abstract/results inspected; later PMC fetches hit bot checks."
+    },
+    {
+      "doi": "10.1080/13697137.2024.2310521",
+      "topic": "Postmenopausal resistance-training meta-analysis; 12 RCTs in healthy postmenopausal women.",
+      "policy_use": "Postmenopausal strength/fitness context; no universal 3-day/60-minute optimum.",
+      "verification_depth": "A; abstract and published-PDF identity only."
+    },
+    {
+      "doi": "10.1002/mnfr.201600772",
+      "topic": "Creatine-form safety review; healthy-adult regulatory context excludes pregnant/breastfeeding women; other forms less studied.",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.1186/s12970-017-0173-z",
+      "topic": "ISSN creatine position stand; sport and clinical literature across ages; adult protocol sections used here.",
+      "policy_use": "Optional adult creatine-monohydrate protocol; 3–5 g/day planning choice, optional loading.",
+      "verification_depth": "S; selected original full-text sections."
+    },
+    {
+      "doi": "10.1186/s12966-020-01048-w",
+      "topic": "WHO activity-guideline messaging commentary; adults/older adults and public-health communication, not a dose-response trial.",
+      "policy_use": "Indexed commentary only; guideline messaging is not an experimental dose or program requirement.",
+      "verification_depth": "M; export scope only, no claim-level appraisal."
+    },
+    {
+      "doi": "10.47197/retos.v83.119754",
+      "topic": "Cycle-phase review; 12 studies of healthy adult eumenorrheic women; PRISMA-ScR, TESTEX; conflicting/heterogeneous protocols.",
+      "policy_use": "Retain disagreement with rows 22/23; no automatic phase-dose rule; full PDF inaccessible.",
+      "verification_depth": "A; publisher abstract/references/date; full PDF inaccessible."
+    },
+    {
+      "doi": "10.1002/ejsc.12266",
+      "topic": "The Effect of Proximity‐To‐Failure on Perceptual Responses to Resistance Training",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; Consensus API discovery metadata/abstract only; no claim-level appraisal"
+    },
+    {
+      "doi": "10.1007/s42978-025-00338-8",
+      "topic": "Influence of Varying Proximity-to-Failure on Muscular Adaptations and Repetitions-in-Reserve Estimation Accuracy in Resistance-Trained Individuals",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; Consensus API discovery metadata/abstract only; no claim-level appraisal"
+    },
+    {
+      "doi": "10.1038/s41598-025-94510-3",
+      "topic": "Effect of different types of exercise on bone mineral density in postmenopausal women: a systematic review and network meta-analysis",
+      "policy_use": "Indexed only; no new policy from this unappraised record.",
+      "verification_depth": "M; Consensus API discovery metadata/abstract only; no claim-level appraisal"
+    }
+  ],
+  "supplemental": [
+    {
+      "doi": "10.1519/jsc.0000000000001826",
+      "purpose": "Acute EMG comparison of barbell deadlift, hex bar deadlift and hip thrust in trained men; not injury-safety or long-term hypertrophy proof."
+    },
+    {
+      "doi": "10.1249/mss.0000000000003091",
+      "purpose": "Modelled gluteal forces during specific hip exercises; not an individual injury-prevention guarantee."
+    },
+    {
+      "doi": "10.1249/mss.0000000000002523",
+      "purpose": "Seated versus prone leg-curl hypertrophy comparison; limited to the studied exercises and population."
+    },
+    {
+      "doi": "10.1519/ssc.0b013e3181df4521",
+      "purpose": "General trunk exercise and performance guidance; not clearance or proof that a particular exercise protects a spine."
+    },
+    {
+      "doi": "10.1007/s40279-015-0365-0",
+      "purpose": "HIIT versus continuous endurance training effects on VO2max; exact interval dose remains coaching."
+    },
+    {
+      "doi": "10.1007/s40279-013-0029-x",
+      "purpose": "Interval-programming considerations; no universal interval-duration floor or individual clearance."
+    },
+    {
+      "doi": "10.1123/ijspp.5.3.276",
+      "purpose": "Endurance-athlete intensity-distribution context; not a universal weekly 80/20 mandate."
+    },
+    {
+      "doi": "10.1007/s40279-021-01587-7",
+      "purpose": "Broader concurrent strength/aerobic outcomes; no universal 48-hour minimum between sessions."
+    }
+  ]
+}

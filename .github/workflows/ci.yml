@@ -1,0 +1,109 @@
+name: QA & Verification Gate
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Run Program Loader Unit Tests
+      run: python3 scripts/test_program_loader.py
+
+    - name: Run Master QA Gate on Every Shipped Program
+      run: |
+        for program in programs/*.py; do
+          python3 scripts/qa_program.py --program "$program"
+        done
+
+    - name: Audit Regression Tests and Readable Plan Drift
+      run: |
+        python3 scripts/test_audit_regressions.py
+        python3 scripts/render_program.py --check
+
+    - name: Run Build Routines Unit Tests on Every Shipped Program
+      run: |
+        for program in programs/*.py; do
+          python3 scripts/test_build_routines.py --program "$program"
+        done
+
+    - name: Run Import Health Gate
+      run: python3 scripts/check_import_health.py
+
+    - name: Run Import Health Unit Tests
+      run: python3 scripts/test_check_import_health.py
+
+    - name: Run Consensus Normalizer Unit Tests
+      run: python3 scripts/test_consensus_normalizer.py
+
+    - name: Run Consensus Cache Integrity Tests
+      run: python3 scripts/test_consensus_cache.py
+
+    - name: Run Consensus Client Unit Tests
+      run: python3 scripts/test_consensus_client.py
+
+    - name: Run Literature Update Unit Tests
+      run: python3 scripts/test_update_literature.py
+
+    - name: Run Evidence Grounding Unit Tests
+      run: python3 scripts/test_eval_evidence_grounding.py
+
+    - name: Run Research Authority Regression Tests
+      run: python3 -m unittest discover -s scripts -p 'test_evidence_authority.py'
+
+    - name: Run Privacy Leak Scanner Tests
+      run: python3 scripts/test_check_privacy_leaks.py
+
+    - name: Run Privacy Leak Scan on Tracked Files
+      run: python3 scripts/check_privacy_leaks.py --all
+
+    - name: Run Movement Pattern Unit Tests
+      run: python3 scripts/test_movement_patterns.py
+
+    - name: Run Program Suggestion Unit Tests
+      run: python3 scripts/test_suggest_program.py
+
+    - name: Run Deficit Tracking Unit Tests
+      run: python3 scripts/test_track_deficit.py
+
+    - name: Run History Analysis Unit Tests
+      run: python3 scripts/test_analyze_history.py
+
+    - name: Run Recovery & Interference Gate Unit Tests
+      run: python3 scripts/test_recovery_interference.py
+
+    - name: Run Writing Standard Unit Tests (ASD-STE100 + BLUF)
+      run: python3 scripts/test_writing_standard.py
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.13"
+
+    - name: Install lint tooling
+      run: pip install ruff==0.16.7 mypy==2.3.1
+
+    - name: Lint (ruff)
+      run: ruff check --output-format=github scripts/ programs/
+
+    - name: Type check (mypy)
+      run: mypy scripts/ programs/
