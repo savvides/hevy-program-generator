@@ -173,7 +173,7 @@ def main(argv: list[str] | None = None) -> int:
 
     print("Hevy API Setup")
     print("--------------")
-    print(f"1. Requires a Hevy Pro subscription.")
+    print("1. Requires a Hevy Pro subscription.")
     print(f"2. Open {DEVELOPER_SETTINGS_URL} in a web browser (not the mobile app).")
     print("3. Sign in, click 'Generate API Key', and copy your key.")
     print("Note: .env is gitignored and your pasted key will not be echoed.\n")
