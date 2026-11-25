@@ -2,12 +2,6 @@
 
 This file provides guidance to Google Antigravity / Gemini CLI when working with code in this repository.
 
-## Operating standards
-
-Global standards (how-to-work mindset, latent-vs-deterministic split, gate-test/eval lanes,
-completion protocol, safety, communication style) apply to all coding sessions. This file covers
-what is specific to this repo.
-
 ## What this is
 
 Open-source evidence-grounded Hevy program generator (`hevy-program-generator`):
@@ -21,9 +15,7 @@ Python 3, standard library only — zero external dependencies, no virtual envir
 
 ## Evidence and citation policy
 
-Use [exercise evidence](docs/evidence_base.md) and [nutrition evidence](docs/nutrition_evidence_base.md), checking the original paper when making a new claim. Cite evidence for exercise selection, volume, RPE/RIR, warmups, rests, cardio, spacing and nutrition recommendations. State what the study supports, its population and relevant limitations. Label exact coaching choices as such; never invent support for a number to satisfy a citation gate.
-
-Software verifies structure, citation resolution and configured policies. A green result is not scientific validation, medical clearance or proof of optimal programming. Do not reinstate the superseded universal 48-hour, 80/20-minute, 20-minute HIIT-floor, 18-set age ceiling, mandatory failure, mandatory fed-state or whole-food-quota claims. See the evidence documents for corrected interpretations.
+Authoritative policy lives in [AGENTS.md](AGENTS.md) (referencing `docs/research/2026-11-02-consensus-review.md`, `data/evidence_authority.json`, `docs/evidence_base.md`, and `docs/nutrition_evidence_base.md`).
 
 ## Commands
 
@@ -62,12 +54,6 @@ python3 scripts/install_hooks.py                                      # install 
 python3 scripts/check_privacy_leaks.py --all                          # verify zero secret or workout leaks
 
 # Individual gate tests & evals (accept --program flag)
-python3 scripts/test_program_loader.py                                # schema loader unit tests
-python3 scripts/test_check_privacy_leaks.py                           # privacy gatekeeper unit tests
-python3 scripts/test_consensus_cache.py                               # consensus cache schema tests
-python3 scripts/test_consensus_client.py                              # consensus API client unit tests
-python3 scripts/test_eval_evidence_grounding.py                       # evidence grounding gate tests
-python3 scripts/test_suggest_program.py                               # program synthesis unit tests
 python3 scripts/test_build_routines.py --program <path>               # payload & structural asserts
 python3 scripts/eval_program_volume.py --program <path>               # weekly weighted sets vs configured bounds
 python3 scripts/eval_recovery_interference.py --program <path>        # configured spacing and classified cardio dose
@@ -78,7 +64,11 @@ python3 scripts/check_cache_schema.py                                 # Gate 7 c
 python3 scripts/check_import_health.py                                # Gate 8 import & CLI health
 python3 scripts/check_writing_standard.py --program <path>            # Gate 9 ASD-STE100 + BLUF text rules (opt-in)
 python3 scripts/render_program.py --check                             # verify readable HTML plan drift
-python3 -m unittest discover -s scripts -p "test_*.py"                # run all 200+ unit tests
+python3 -m unittest discover -s scripts -p "test_*.py"                # run all unit tests (17 test modules)
+
+# Lint & type check (mirrors .github/workflows/ci.yml)
+ruff check scripts/ programs/
+mypy scripts/ programs/
 ```
 
 `qa_program.py` executes all gates in one command and exits non-zero if any invariant is violated.

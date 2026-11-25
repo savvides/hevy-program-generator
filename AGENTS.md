@@ -62,38 +62,11 @@ When a lifter asks to design a new program, adjust their training split, or opti
 
 When creating or modifying a program, follow this closed-loop execution workflow:
 
-```text
-┌─────────────────────────────────────────────────────────────┐
-│ 1. Synthesize Program Definition                            │
-│    Write to programs/program.py or programs/<name>.py       │
-│    Adhere strictly to schema contract (Metadata, Routines)  │
-└──────────────────────────────┬──────────────────────────────┘
-                               │
-                               ▼
-┌─────────────────────────────────────────────────────────────┐
-│ 2. Run Pre-Flight QA Gatekeeper                             │
-│    python3 scripts/qa_program.py --program <path>           │
-└──────────────────────────────┬──────────────────────────────┘
-                               │
-              ┌────────────────┴────────────────┐
-              ▼                                 ▼
-       [ QA Errors ✗ ]                   [ QA Green ✓ ]
-              │                                 │
-              ▼                                 ▼
-┌───────────────────────────┐    ┌────────────────────────────┐
-│ 3. Autonomous Refinement  │    │ 4. Dry-Run Sync Validation │
-│    Fix volume, RPE, rest, │    │    python3                 │
-│    spacing, or time cap   │    │    scripts/build_routines  │
-│    Loop back to Step 2    │    │    .py --program <path>    │
-└───────────────────────────┘    │    --dry-run               │
-                                 └──────────────┬─────────────┘
-                                                │
-                                                ▼
-                                 ┌────────────────────────────┐
-                                 │ 5. Deliver to User         │
-                                 │    Report scorecard & sync │
-                                 └────────────────────────────┘
-```
+1. **Synthesize Program Definition:** Write to `programs/program.py` or `programs/<name>.py` conforming to the schema contract.
+2. **Run Pre-Flight QA Gatekeeper:** `python3 scripts/qa_program.py --program <path>`.
+3. **Autonomous Refinement:** If any gate fails, fix volume, RPE, rest, spacing, citations, or time cap and re-run Step 2 until green.
+4. **Dry-Run Sync Validation:** `python3 scripts/build_routines.py --program <path> --dry-run`.
+5. **Deliver to User:** Report the scorecard and reconcile plan.
 
 ### CLI Verification Commands
 
@@ -109,8 +82,9 @@ python3 scripts/eval_program_volume.py --program <path>          # configured we
 python3 scripts/eval_recovery_interference.py --program <path>  # configured spacing and classified cardio dose
 python3 scripts/estimate_session_time.py --program <path>        # Gym duration simulator vs time cap
 
-# 3. Unit test suite for loader
-python3 scripts/test_program_loader.py
+# 3. Unit test suite & CI lint/type checks
+python3 -m unittest discover -s scripts -p "test_*.py"
+ruff check scripts/ programs/ && mypy scripts/ programs/
 
 # 4. Preview Hevy reconcile plan without network writes
 python3 scripts/build_routines.py --program <path> --dry-run
@@ -203,7 +177,7 @@ The detailed, qualified defaults live in [docs/evidence_base.md](docs/evidence_b
 
 ---
 
-## 6. Hevy API Sync Rules & Limitations
+## 6. Hevy API Gotchas & Sync Rules
 
 - **Authentication:** Read `HEVY_API_KEY` from `.env` or system environment. Never commit `.env`. When `HEVY_API_KEY` is missing, still a template placeholder, or rejected with HTTP 401/403, walk the user through setup: note that **Hevy Pro** is required, have them generate a key on the web at `https://hevy.com/settings?developer` (not the mobile app), and instruct them to run `python3 scripts/setup_hevy.py` (or edit `.env` locally and run `python3 scripts/setup_hevy.py --check`). **Never** ask the user to paste their API key into chat.
 - **Idempotency:** Reconcile matches routines by `routine_key` (weekday prefix e.g. "Tuesday" or normalized full title). Existing routines are updated in place with `PUT /v1/routines/{id}`; new routines are created with `POST /v1/routines`.
