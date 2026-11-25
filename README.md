@@ -25,6 +25,24 @@ Define training routines in Python, validate them against deterministic structur
 
 ---
 
+## Why Not Just Use Hevy's ChatGPT or Claude Connector?
+
+Hevy's built-in ChatGPT Plugin and Claude Connector optimize for fast, zero-setup routine generation in chat, whereas `hevy-program-generator` treats training programs as tested, versioned code where an LLM proposes changes and deterministic scripts validate them before syncing.
+
+| Dimension | Hevy ChatGPT / Claude Connector | `hevy-program-generator` |
+| --- | --- | --- |
+| **Setup & UX** | 1-click OAuth in Hevy; works from web or mobile chat with no terminal. | Local Git repo + Python 3 (zero external dependencies) + optional `HEVY_API_KEY`. |
+| **Pre-sync validation** | Best-effort LLM judgment; no automated checks before saving. | 9 deterministic QA gates ([`scripts/qa_program.py`](scripts/qa_program.py)) checking catalog matching, time cap, volume, spacing, RPE ceiling, citations, and gym-note rules. |
+| **Session duration** | Rough LLM estimate. | Per-set, warmup, unilateral, and rest simulator calibrated against logged Hevy workouts ([`scripts/calibrate_session_time.py`](scripts/calibrate_session_time.py)). |
+| **Evidence & citations** | Model memory or ad-hoc search; study findings and coaching opinions can blend together. | Audited evidence docs ([`docs/evidence_base.md`](docs/evidence_base.md)) + offline 309-paper Consensus cache ([`data/consensus_cache.json`](data/consensus_cache.json)) separating study limits from coaching choices *(QA checks configured rules and citation resolution, not medical clearance or optimal programming)*. |
+| **Sync & versioning** | Direct chat writes; plans live in chat threads and the Hevy app. | Git-versioned Python source of truth, `--dry-run` diffs, idempotent `PUT`/`POST` reconcile ([`scripts/build_routines.py`](scripts/build_routines.py)), orphan detection, and drift-checked HTML export ([`scripts/render_program.py`](scripts/render_program.py)). |
+| **Data & portability** | Workout history pulled into cloud chat sessions tied to ChatGPT or Claude. | Local gitignored JSON archive ([`scripts/fetch_workouts.py`](scripts/fetch_workouts.py)) with pre-commit leak protection ([`scripts/check_privacy_leaks.py`](scripts/check_privacy_leaks.py)); works with any coding agent or pure CLI. |
+
+- **Use Hevy's native ChatGPT / Claude connector** when you want the fastest, zero-setup way to brainstorm and save routines from chat.
+- **Use `hevy-program-generator`** when you want programmable guardrails, calibrated time budgets, auditable citations, Git diffs/rollbacks, and local ownership of your training data.
+
+---
+
 ## How to Use This Repo
 
 ### 1. Setup (Once)
