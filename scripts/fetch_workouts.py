@@ -11,6 +11,8 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
+from setup_hevy import auth_error_hint, is_placeholder_key, missing_key_message
+
 API_BASE = "https://api.hevyapp.com/v1"
 PAGE_SIZE = 10  # Hevy API max
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -53,10 +55,12 @@ def main(argv: list[str] | None = None) -> int:
     args = ap.parse_args(argv)
 
     load_dotenv(REPO_ROOT / ".env")
-    api_key = os.environ.get("HEVY_API_KEY")
-    if not api_key:
-        print("error: HEVY_API_KEY not set (export it or add it to .env)", file=sys.stderr)
+    raw_key = os.environ.get("HEVY_API_KEY")
+    if is_placeholder_key(raw_key):
+        print(missing_key_message(raw_key), file=sys.stderr)
         return 1
+    assert raw_key is not None
+    api_key = raw_key.strip()
 
     out_dir = resolve_workouts_dir(args.data_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -65,6 +69,8 @@ def main(argv: list[str] | None = None) -> int:
         first = fetch_page(api_key, 1)
     except urllib.error.HTTPError as e:
         print(f"error: HTTP {e.code} on page 1: {e.read().decode('utf-8', 'replace')}", file=sys.stderr)
+        if e.code in (401, 403):
+            print(f"  hint: {auth_error_hint(e.code)}", file=sys.stderr)
         return 1
     except NETWORK_ERRORS as e:
         print(f"error: fetch stopped on page 1 ({e!r}). It is safe to re-run.", file=sys.stderr)

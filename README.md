@@ -34,7 +34,10 @@ git clone https://github.com/savvides/hevy-program-generator.git
 cd hevy-program-generator
 ```
 
-- *(Optional — for Hevy sync, workout history, or live literature queries)* Copy `.env.example` to `.env` and add `HEVY_API_KEY` and/or `CONSENSUS_API_KEY`. Offline QA, program synthesis, and cached citation checks work with no API keys.
+- *(Optional — for Hevy sync or workout history)* Set up `HEVY_API_KEY` (offline QA, program synthesis, and cached citation checks work with no API keys):
+  1. **Requires Hevy Pro.** Open [`https://hevy.com/settings?developer`](https://hevy.com/settings?developer) in a web browser (not the mobile app), sign in, and click **Generate API Key**.
+  2. Run `python3 scripts/setup_hevy.py` to save and verify your key in `.env` (or copy `.env.example` to `.env`, set `HEVY_API_KEY=...`, and run `python3 scripts/setup_hevy.py --check`).
+  3. `.env` is gitignored and never committed. *(For live literature queries, you can also add `CONSENSUS_API_KEY` to `.env`.)*
 - *(Optional — recommended before committing)* Install the pre-commit privacy hook to block accidental commits of workout logs, custom programs, or secrets:
 
 ```bash
@@ -278,6 +281,8 @@ Joint-profile labels preserve selection constraints and do not provide clinical 
 ---
 
 ## Hevy Cloud Sync & Workout History
+
+> **Need an API key?** See [Setup (Once)](#1-setup-once) or run `python3 scripts/setup_hevy.py` (verify an existing key with `python3 scripts/setup_hevy.py --check`).
 
 ### Pulling Workout Logs & Privacy Isolation
 

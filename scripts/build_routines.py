@@ -16,6 +16,7 @@ from pathlib import Path
 from program_loader import load_program
 from prescriptions import parse_work_sets
 from eval_evidence_grounding import parse_citation, split_citations
+from setup_hevy import auth_error_hint, is_placeholder_key, missing_key_message
 
 API_BASE = "https://api.hevyapp.com/v1"
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -445,10 +446,21 @@ def main(argv: list[str]) -> int:
         print()
 
     load_dotenv(REPO_ROOT / ".env")
-    api_key = os.environ.get("HEVY_API_KEY")
-    if not api_key and not args.dry_run:
-        print("error: HEVY_API_KEY not set (export it or add it to .env)", file=sys.stderr)
-        return 1
+    raw_key = os.environ.get("HEVY_API_KEY")
+    if is_placeholder_key(raw_key):
+        if not args.dry_run:
+            print(missing_key_message(raw_key), file=sys.stderr)
+            return 1
+        api_key = None
+        unchecked_reason = (
+            "HEVY_API_KEY is still a placeholder"
+            if (raw_key is not None and raw_key.strip())
+            else "HEVY_API_KEY is not set"
+        )
+    else:
+        assert raw_key is not None
+        api_key = raw_key.strip()
+        unchecked_reason = None
 
     print(f"Loading exercise templates ({CACHE_PATH.relative_to(REPO_ROOT)})…")
     # A dry run passes no key, so fetch_templates reads the cache and never rewrites it.
@@ -489,7 +501,7 @@ def main(argv: list[str]) -> int:
     folder_id = None
     in_folder: list[dict] = []
     # Why the existing routines could not be read (dry-run only); None = they were read.
-    unchecked = None if api_key else "HEVY_API_KEY is not set"
+    unchecked = unchecked_reason
     if api_key:
         try:
             folder_id = find_folder(api_key, target_folder)
@@ -502,6 +514,9 @@ def main(argv: list[str]) -> int:
                 else:
                     unchecked = f"Hevy API unreachable ({e})"
                 print(f"  note: {unchecked}; running dry-run against local cache")
+            elif isinstance(e, urllib.error.HTTPError) and e.code in (401, 403):
+                print(f"error: {auth_error_hint(e.code)}", file=sys.stderr)
+                return 1
             else:
                 raise
     try:
@@ -552,6 +567,8 @@ def main(argv: list[str]) -> int:
         except urllib.error.HTTPError as e:
             print(f"error: folder create failed: HTTP {e.code} — "
                   f"{e.read().decode('utf-8', 'replace')}", file=sys.stderr)
+            if e.code in (401, 403):
+                print(f"  hint: {auth_error_hint(e.code)}", file=sys.stderr)
             return 1
         except NETWORK_ERRORS as e:
             print(f"error: sync stopped at folder create ({e!r}). No routine was written; "
@@ -580,6 +597,8 @@ def main(argv: list[str]) -> int:
         except urllib.error.HTTPError as e:
             print(f"  error: HTTP {e.code} — {e.read().decode('utf-8', 'replace')}",
                   file=sys.stderr)
+            if e.code in (401, 403):
+                print(f"  hint: {auth_error_hint(e.code)}", file=sys.stderr)
             return 1
         except NETWORK_ERRORS as e:
             print(f"  error: sync stopped partway at {r_title!r} ({e!r}). It is safe to "

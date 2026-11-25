@@ -205,7 +205,7 @@ The detailed, qualified defaults live in [docs/evidence_base.md](docs/evidence_b
 
 ## 6. Hevy API Sync Rules & Limitations
 
-- **Authentication:** Read `HEVY_API_KEY` from `.env` or system environment. Never commit `.env`.
+- **Authentication:** Read `HEVY_API_KEY` from `.env` or system environment. Never commit `.env`. When `HEVY_API_KEY` is missing, still a template placeholder, or rejected with HTTP 401/403, walk the user through setup: note that **Hevy Pro** is required, have them generate a key on the web at `https://hevy.com/settings?developer` (not the mobile app), and instruct them to run `python3 scripts/setup_hevy.py` (or edit `.env` locally and run `python3 scripts/setup_hevy.py --check`). **Never** ask the user to paste their API key into chat.
 - **Idempotency:** Reconcile matches routines by `routine_key` (weekday prefix e.g. "Tuesday" or normalized full title). Existing routines are updated in place with `PUT /v1/routines/{id}`; new routines are created with `POST /v1/routines`.
 - **No DELETE Endpoint:** The Hevy API does not provide a routine deletion endpoint. Orphaned or duplicate routines are detected and flagged for manual deletion in the Hevy mobile app.
 - **PUT Constraint:** `PUT /v1/routines/{id}` rejects `routine.folder_id`. Only supply `folder_id` on initial `POST` creation.

@@ -13,6 +13,9 @@ All AI coding assistants (Claude Code, Google Antigravity, Gemini CLI, Cursor, e
 ## Commands Quick Reference
 
 ```bash
+# Set up / verify HEVY_API_KEY (requires Hevy Pro, https://hevy.com/settings?developer)
+python3 scripts/setup_hevy.py --check
+
 # Master QA Gate (all 9 compiler gates)
 python3 scripts/qa_program.py
 

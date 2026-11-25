@@ -28,8 +28,9 @@ Software verifies structure, citation resolution and configured policies. A gree
 ## Commands
 
 ```bash
-# Setup (once): copy .env.example and configure HEVY_API_KEY and optional CONSENSUS_API_KEY
-cp .env.example .env
+# Setup (once): configure HEVY_API_KEY (requires Hevy Pro, https://hevy.com/settings?developer)
+python3 scripts/setup_hevy.py                                         # interactive setup + verification
+python3 scripts/setup_hevy.py --check                                 # verify configured HEVY_API_KEY
 
 # Master QA Gate (runs unit tests, volume evals, interference/recovery evals, time model, evidence grounding)
 python3 scripts/qa_program.py                                         # evaluates active/default program
